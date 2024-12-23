@@ -7,7 +7,7 @@ SQL-based analysis of the data analyst job market, examining skills, salaries, a
 ### 1. Top Paying Jobs (`Top_Paying_Jobs.sql`)
 Lists the top 100 highest-paying data analyst positions, including company details and job locations.
 
-''' sql
+``` sql
 SELECT job_id,
 name AS 'Company Name',
 job_title_short,
@@ -23,7 +23,7 @@ AND
 salary_year_avg <> ''
 ORDER BY salary_year_avg DESC
 LIMIT 100;
-'''
+```
 ### 2. Top Paying Jobs Skills (`Top_Paying_Jobs_Skills.sql`)
 Analyzes the most common skills required in the top 100 highest-paying data analyst positions.
 
