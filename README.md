@@ -1,28 +1,28 @@
 
 ## Overview
-SQL-based analysis of the data analyst job market, examining skills, salaries, and job postings to provide insights into industry trends and requirements.
+SQL-Based Analysis Of The Data Analyst Job Market, Examining Skills, Salaries, And Job Postings To Provide Insights Into Industry Trends And Requirements.
 
 
 ## Database Schema
 
 ### Main Tables
-- `job_postings_fact`: Core job posting information
-- `company_dim`: Company details
-- `skills_dim`: Skills information
-- `skills_job_dim`: Mapping table linking skills to job postings
+- `job_postings_fact`: Core Job Posting Information
+- `company_dim`: Company Details
+- `skills_dim`: Skills Information
+- `skills_job_dim`: Mapping Table Linking Skills To Job Postings
 
 ### Key Fields
-- `job_id`: Unique identifier for job postings
-- `company_id`: Unique identifier for companies
-- `skill_id`: Unique identifier for skills
-- `salary_year_avg`: Average yearly salary
-- `job_title_short`: Standardized job titles
-- `job_location`: Geographic location of the position
+- `job_id`: Unique Identifier For Job Postings
+- `company_id`: Unique Identifier For Companies
+- `skill_id`: Unique Identifier For Skills
+- `salary_year_avg`: Average Yearly Salary
+- `job_title_short`: Standardized Job Titles
+- `job_location`: Geographic Location Of The Position
 
 ## Queries
 
 ### 1. Top Paying Jobs (`Top_Paying_Jobs.sql`)
-Lists the top 100 highest-paying data analyst positions, including company details and job locations.
+Lists The Top 100 Highest-Paying Data Analyst Positions, Including Company Details And Job Locations.
 
 ``` sql
 SELECT job_id,
@@ -42,7 +42,7 @@ ORDER BY salary_year_avg DESC
 LIMIT 100;
 ```
 ### 2. Top Paying Jobs Skills (`Top_Paying_Jobs_Skills.sql`)
-Analyzes the most common skills required in the top 100 highest-paying data analyst positions.
+Analyzes The Most Common Skills Required In The Top 100 Highest-Paying Data Analyst Positions.
 
 ```sql
 WITH Top_Paying_jobs AS(
@@ -73,7 +73,7 @@ LIMIT 10
 ```
 
 ### 3. Most Demanded Skills (`Most_Demanded_Skills.sql`)
-Lists the top 10 most frequently requested skills across all data analyst job postings.
+Lists The Top 10 Most Frequently Requested Skills Across All Data Analyst Job Postings.
 
 ```sql
 SELECT skills,job_title_short,COUNT(*) AS'Skill Count'
@@ -86,9 +86,23 @@ GROUP BY skills
 ORDER BY "Skill Count" DESC
 LIMIT 10
 ```
+| Skills      | Job Title Short | Skill Count |
+|-------------|-----------------|-------------|
+| SQL         | Data Analyst    | 92,628      |
+| Excel       | Data Analyst    | 67,031      |
+| Python      | Data Analyst    | 57,326      |
+| Tableau     | Data Analyst    | 46,554      |
+| Power BI    | Data Analyst    | 39,468      |
+| R           | Data Analyst    | 30,075      |
+| SAS         | Data Analyst    | 28,068      |
+| PowerPoint  | Data Analyst    | 13,848      |
+| Word        | Data Analyst    | 13,591      |
+| SAP         | Data Analyst    | 11,297      |
+
+*Top 10 Frequently Requested Skills*
 
 ### 4. Top Paying Skills (`Top_Paying_Skills.sql`)
-Identifies skills associated with the highest average salaries in data analyst roles.
+Identifies Skills Associated With The Highest Average Salaries In Data Analyst Roles.
 
 ```sql
 SELECT DISTINCT skills,
@@ -105,7 +119,7 @@ LIMIT 10
 ```
 
 ### 5. Optimal Skills Analysis (`Optimal_Skills.sql`)
-Identifies the top 10 skills associated with higher salaries in data analyst positions, filtering for skills that appear in more than 10 job postings.
+Identifies The Top 10 Skills Associated With Higher Salaries In Data Analyst Positions, Filtering For Skills That Appear In More Than 10 Job Postings.
 
 ```sql
 SELECT skills,job_title_short,COUNT(*) AS'Skill Count',CAST(AVG(salary_year_avg)AS INT) AS 'Average Salary'
