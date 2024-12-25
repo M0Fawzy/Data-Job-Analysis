@@ -200,7 +200,7 @@ LIMIT 10
 | Linux       | Data Analyst    | 58          | 114,883        |
 | Confluence  | Data Analyst    | 62          | 114,153        |
 
-*Top !0 Highest salary Skills That Are Used In More Than 10 Job Postings*
+*Top 10 Highest Salary Skills That Are Used In More Than 10 Job Postings*
 
 **Breakdown Of The Results:**
 
