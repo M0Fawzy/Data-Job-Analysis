@@ -41,6 +41,14 @@ salary_year_avg <> ''
 ORDER BY salary_year_avg DESC
 LIMIT 100;
 ```
+Key Observations From The Data:
+- The highest-paying position is a Data Analyst role with a salary of $650,000
+- The majority of top-paying roles are leadership or senior positions
+
+![image](https://github.com/user-attachments/assets/e2a27949-3fe2-4db0-a426-6d8e61d5327b)
+
+*Bar Chart Made In Power BI That Showcases The Top 10 Highest Paying Jobs*
+
 ### 2. Top Paying Jobs Skills (`Top_Paying_Jobs_Skills.sql`)
 Analyzes The Most Common Skills Required In The Top 100 Highest-Paying Data Analyst Positions.
 
@@ -71,6 +79,18 @@ GROUP BY skills
 ORDER BY "Skill Usage" DESC
 LIMIT 10
 ```
+| Skills      | Skill Usage |
+|-------------|-------------|
+| Python      | 54          |
+| SQL         | 50          |
+| Tableau     | 37          |
+| R           | 28          |
+| Excel       | 19          |
+| Spark       | 13          |
+| AWS         | 12          |
+| Power BI    | 11          |
+| Go          | 10          |
+| SAS         | 10          |
 
 ### 3. Most Demanded Skills (`Most_Demanded_Skills.sql`)
 Lists The Top 10 Most Frequently Requested Skills Across All Data Analyst Job Postings.
@@ -117,6 +137,18 @@ salary_year_avg <> ''
 ORDER BY "Average Salary" DESC
 LIMIT 10
 ```
+| Skills      | Average Salary |
+|-------------|----------------|
+| SVN         | 400,000        |
+| Solidity    | 179,000        |
+| Couchbase   | 160,515        |
+| DataRobot   | 155,485        |
+| Golang      | 155,000        |
+| MXNet       | 149,000        |
+| dplyr       | 147,633        |
+| VMware      | 147,500        |
+| Terraform   | 146,733        |
+| Twilio      | 138,500        |
 
 ### 5. Optimal Skills Analysis (`Optimal_Skills.sql`)
 Identifies The Top 10 Skills Associated With Higher Salaries In Data Analyst Positions, Filtering For Skills That Appear In More Than 10 Job Postings.
@@ -136,4 +168,15 @@ HAVING
 ORDER BY "Average Salary" DESC
 LIMIT 10
 ```
-
+| Skills      | Job Title Short | Skill Count | Average Salary |
+|-------------|-----------------|-------------|----------------|
+| Kafka       | Data Analyst    | 40          | 129,999        |
+| PyTorch     | Data Analyst    | 20          | 125,226        |
+| Perl        | Data Analyst    | 20          | 124,685        |
+| TensorFlow  | Data Analyst    | 24          | 120,646        |
+| Cassandra   | Data Analyst    | 11          | 118,406        |
+| Atlassian   | Data Analyst    | 15          | 117,965        |
+| Airflow     | Data Analyst    | 71          | 116,387        |
+| Scala       | Data Analyst    | 59          | 115,479        |
+| Linux       | Data Analyst    | 58          | 114,883        |
+| Confluence  | Data Analyst    | 62          | 114,153        |
